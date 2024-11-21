@@ -1,1 +1,1 @@
-This Repository contain varies Complete ML Related Projects 
+This Repository contain FaceRecognition projects.
