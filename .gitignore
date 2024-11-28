@@ -3,3 +3,4 @@ test_images/
 haarcascades/
 artifacts/
 __pycache__
+images/
