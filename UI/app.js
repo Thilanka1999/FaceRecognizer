@@ -21,7 +21,7 @@ function init() {
         var url = "http://127.0.0.1:5000/classify_image";
 
         $.post(url, {
-            image_data: file.dataURL
+            image_data: imageData
         },function(data, status) {
             /* 
             Below is a sample response if you have two faces in an image lets say virat and roger together.
