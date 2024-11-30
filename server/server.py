@@ -1,8 +1,28 @@
 from flask import Flask, request, jsonify
-import utils
+import util
 
 app = Flask(__name__)
 
-@app.route("/classify")
-def classify_img():
-    img_data = request.form['img_data']
+
+@app.route('/classify_image', methods=['GET', 'POST'])
+def classify_image():
+    image_data = request.form['image_data']
+
+    response = jsonify(util.classify_image(image_data))
+
+    response.headers.add('Access-Control-Allow-Origin', '*')
+
+    return response
+
+if __name__ == "__main__":
+    print("Starting Python Flask Server For Sports Celebrity Image Classification")
+    util.load_saved_artifacts()
+    app.run(port=5000)
+
+# from flask import Flask
+
+# app = Flask(__name__)
+
+# @app.route("/")
+# def hello_world():
+#     return "<p>Hello, Worldkkkkkkkkkkkkkkkkkkkk!</p>"
