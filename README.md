@@ -35,3 +35,22 @@ server {
 this will redirect the /api/ traffic to 5000 port and it will render the app.html page inside the root directorty when it call.
 
 
+
+#Flask
+
+we need to run Flask server at the backend to make the prediction. so python packages should be properly installed.
+in newer version of ubuntu there is problem. From Ubuntu 23.04 you may encounter a new error in Python due to a change in the package installation policy that prevents packages installed through pip from colliding in any way with those installed with APT.
+
+sudo apt install python3-venv
+python3 -m venv .venv
+user@server# ls .venv/
+source .venv/bin/activate
+pip install openai
+
+you need to create vertual envirenmont to run the pythnon thing
+
+after that cd to the server directory, run the server by puting python server.py
+
+this will actvate the Flask server at port 5000 in here it will lisntening to /api/ addresses. andif get the data it will run the model and responded the prediction result.
+
+
