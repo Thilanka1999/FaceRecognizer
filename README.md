@@ -1,3 +1,24 @@
+# Machine learning part
+In the first part, I needed to find the correct dataset for training. For this model, I used a small amount of data downloaded from Google Images. Here, I only classified 5 popular persons in the world. If you need to classify more people or complex features, you can use a much larger dataset and a bigger model.
+
+Secondly, I carried out data preprocessing and feature engineering tasks:
+- Removing unclear images, such as when the face is not clearly visible.
+- Cropping the face and saving the image.
+For cropping, I used OpenCV's CascadeClassifier, which has pre-trained eye and face detectors. Using this, I detected faces and identified the eyes. If the eyes were not clearly visible, I removed those images from the dataset.
+
+In the feature engineering part, I vertically stacked RGB channels and wavelet-transformed grayscale images of the original images. This contains a lot of valuable information about the image. In simple terms, it is similar to a Fourier transform, as it detects various features and how the image is built.
+
+Using the above-stacked images, the training process was carried out.
+
+## UI Design
+An HTML/CSS/JavaScript-based UI is designed. In the UI, you can drag and drop an image, and it will show you the probabilities of who is most likely in the given image.
+
+The drag-and-drop feature works using the Dropzone.js JavaScript and CSS library. The uploaded image is transformed into a Base64 text format, and at the backend, we need to re-transform the image back into its original format.
+
+# server desing
+A Flask server is used to develop the server setup. The server folder contains the previously trained model, server files, and utility files. The utility files contain all the necessary tools for the inference.
+
+
 # Deployment on Ubuntu EC2 Instance
 
 ## Overview
